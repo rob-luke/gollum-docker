@@ -12,6 +12,4 @@ VOLUME /wiki
 WORKDIR /wiki
 EXPOSE 4567
 
-RUN which gollum
-
-CMD ["gollum", "--allow-uploads", "page", "--base-path", "/wiki", "--live-preview", "--config", "/wiki/config.rb"]
+ENTRYPOINT ["/usr/local/bundle/bin/gollum", "--allow-uploads", "page", "--base-path", "/wiki", "--live-preview"]
